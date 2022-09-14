@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "Employee";
+}
+<form asp-action="Index">
+    <label>EmployeeID:</label>
+    <input type="number" name="EmployeeID" value="1">
+    <br>
+    <label>EmployeeName:</label>
+    <input type="text" name="EmployeeName" value="Nguyen Van A">
+    <br>
+    <label>Age:</label>
+    <input type="number" name="Age" value="18">
+    <br>
+    <input type="submit" value="send">
+</form>
+<h2>@ViewBag.name</h2>
