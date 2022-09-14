@@ -1,16 +1,21 @@
-@{
-    ViewData["Title"] = "Person";
-}
-<form asp-action="Index">
-    <label>EmployeeID:</label>
-    <input type="number" name="PersonID" value="1">
-    <br>
-    <label>EmployeeName:</label>
-    <input type="text" name="PersonName" value="Nguyen Van A">
-    <br>
-    <label>Age:</label>
-    <input type="number" name="Age" value="18">
-    <br>
-    <input type="submit" value="send">
-</form>
-<h2>@ViewBag.name</h2>
+<table class="table border">
+    <tr>
+        <th>
+            <label>PersonID</label>
+        </th>
+         <th>
+            <label>PersonName</label>
+        </th>
+         <th>
+            <label>Age</label>
+        </th>
+    </tr>
+    @foreach (var item in ViewData["Persons"] as List<Person>)
+    {
+        <tr>
+            <td>@item.PersonID</td>
+            <td>@item.PersonName</td>
+            <td>@item.Age</td>
+        </tr>
+    }
+</table> 
