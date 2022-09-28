@@ -1,25 +1,27 @@
 using System;
+using DemoMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Encodings.Web;
-using DemoMVC.Models;
-namespace DemoMVC.Controllers{
-    public class DemoController : Controller
+namespace DemoMVC.Controllers
+{
+    public class Ptb2Controller : Controller
     {
-        giaiphuongtrinh gpt= new giaiphuongtrinh();
+         giaiphuongtrinh gpt= new giaiphuongtrinh();
         public IActionResult Index(){    
             return View();
         }
         [HttpPost]
-        public IActionResult Index(String heSoA, string hesoB){
+        public IActionResult Index(string soA, string soB, string soC){
             // tisnh nghiem pt
             //1.Khai bao bien
            
             //2.gan gia tri gui tu view len
-            double a= Convert.ToDouble(heSoA);
-           double b= Convert.ToDouble(hesoB);
-           string Thongbao = gpt.giaiphuongtrinhbacmot(a,b);
+            double a= Convert.ToDouble(soA);
+           double b= Convert.ToDouble(soB);
+            double c= Convert.ToDouble(soC);
+           string Thongbao = gpt.giaiphuongtrinhbachai(a,b,c);
     
-        ViewBag.mess1= Thongbao;
+                ViewBag.mess= Thongbao;
             return View();
 
         }
