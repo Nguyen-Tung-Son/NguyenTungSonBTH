@@ -1,7 +1,11 @@
-@{
-    ViewData["Title"] = "Index";
-}
+<form asp-action="Index">
+    <p>
+        <label> He so A:</label>
+        <input type="text" name="HesoA">
 
-<h2>Index</h2>
-
-<p>Hello from our View Template!</p>
+        <label> He so B:</label>
+        <input type="text" name="HesoB">
+        <button type="submit" value="Tinh ">giải phương trình</button>
+    </p>
+    <h2>@ViewBag.mess1</h2>
+</form>
